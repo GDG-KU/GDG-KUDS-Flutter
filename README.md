@@ -43,6 +43,11 @@ dart run build_runner build
 
 해당 명령어를 수행 해 주어야 widgetbook에서 확인 가능합니다.
 
+## For Contribution
+이하에 서술하는 Coding Convention과 Project Structure를 잘 지켜주셔야 합니다.
+
+또한 개발한 코드에 대해 test를 반드시 작성 후 pass해야 합니다.
+
 ## Project Structure
 
 ```
