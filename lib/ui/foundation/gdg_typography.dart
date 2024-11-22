@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gdg_dsgn/util.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';

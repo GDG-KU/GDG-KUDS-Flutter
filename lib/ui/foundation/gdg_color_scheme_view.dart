@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gdg_dsgn/util.dart';
 
-class GdgColorScheme extends StatelessWidget {
-  const GdgColorScheme({super.key});
+class GdgColorSchemeView extends StatelessWidget {
+  const GdgColorSchemeView({super.key});
 
   @override
   Widget build(BuildContext context) {
