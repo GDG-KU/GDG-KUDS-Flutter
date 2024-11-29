@@ -11,17 +11,12 @@ void main() {
 }
 
 @widgetbook.App()
-class WidgetbookApp extends StatefulWidget {
+class WidgetbookApp extends StatelessWidget {
   const WidgetbookApp({super.key});
 
   @override
-  State<WidgetbookApp> createState() => _WidgetbookAppState();
-}
-
-class _WidgetbookAppState extends State<WidgetbookApp> {
-  @override
   Widget build(BuildContext context) {
-    return Widgetbook(
+    return Widgetbook.material(
       directories: directories,
       themeMode: ThemeMode.light,
       addons: [
@@ -36,15 +31,18 @@ class _WidgetbookAppState extends State<WidgetbookApp> {
         ),
       ],
       appBuilder: (context, child) {
-        return MaterialApp(
-          themeMode: ThemeMode.light,
-          builder: (context, child) {
-            return GdgTheme(
-              data: GdgThemeData(),
-              child: child!,
-            );
-          },
+        return GdgTheme(
+          data: GdgThemeData(),
+          child: child,
         );
+        // return MaterialApp(
+        //   builder: (context, child) {
+        //     return GdgTheme(
+        //       data: GdgThemeData(),
+        //       child: child!,
+        //     );
+        //   },
+        // );
       },
     );
   }
