@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gdg_dsgn/util.dart';
 
-class GdgTypography extends StatelessWidget {
-  const GdgTypography({super.key});
+class GdgTypographyView extends StatelessWidget {
+  const GdgTypographyView({super.key});
 
   @override
   Widget build(BuildContext context) {

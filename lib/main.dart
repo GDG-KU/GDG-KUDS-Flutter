@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/component/gdg_button.dart';
-import 'package:gdg_dsgn/ui/theme/color_scheme.dart';
-import 'package:gdg_dsgn/util.dart';
-import 'package:get_it/get_it.dart';
+import 'package:gdg_dsgn/ui/foundation/gdg_typography.dart';
+import 'package:gdg_dsgn/ui/theme/data.dart';
+import 'package:gdg_dsgn/ui/theme/theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -20,38 +19,14 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    if (!isInitialized) {
-      GetIt.I.registerSingleton<Util>(Util(context));
-      isInitialized = true;
-    }
-
     return MaterialApp(
-      home: Scaffold(
-        body: Theme(
-          data: ThemeData(
-            primaryColor: kColors.primary80,
-            iconTheme: const IconThemeData(
-              color: kColors.primary10,
-            ),
-          ),
-          child: Center(
-            child: GdgButton(
-              onPressed: () {},
-              // icon: const Icon(Icons.share),
-              // child: const Text('Share'),
-              child: Icon(Icons.check, color: Colors.green),
-
-              // child: Text(
-              //   'Share',
-              //   style: TextStyle(
-              //     color: Colors.white,
-              //     fontSize: 16.pxToDP,
-              //   ),
-              // ),
-            ),
-          ),
-        ),
-      ),
+      builder: (context, child) {
+        return GdgTheme(
+          data: GdgThemeData(),
+          child: child!,
+        );
+      },
+      home: const GdgTypographyView(),
     );
   }
 }
