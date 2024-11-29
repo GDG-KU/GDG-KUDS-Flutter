@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/color_scheme.dart';
 
 import 'package:gdg_dsgn/util.dart';
 

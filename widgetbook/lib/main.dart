@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
+import 'package:gdg_dsgn/ui/theme/color_scheme.dart';
+import 'package:gdg_dsgn/util.dart';
+import 'package:get_it/get_it.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
@@ -10,11 +12,22 @@ void main() {
 }
 
 @widgetbook.App()
-class WidgetbookApp extends StatelessWidget {
+class WidgetbookApp extends StatefulWidget {
   const WidgetbookApp({super.key});
 
   @override
+  State<WidgetbookApp> createState() => _WidgetbookAppState();
+}
+
+class _WidgetbookAppState extends State<WidgetbookApp> {
+  bool isInitialized = false;
+
+  @override
   Widget build(BuildContext context) {
+    if (!isInitialized) {
+      GetIt.I.registerSingleton<Util>(Util(context));
+      isInitialized = true;
+    }
     return Widgetbook(
       directories: directories,
       themeMode: ThemeMode.light,
@@ -28,26 +41,20 @@ class WidgetbookApp extends StatelessWidget {
             Devices.android.smallTablet,
           ],
         ),
-        ThemeAddon(
-          themes: [
-            WidgetbookTheme(
-              name: 'Light',
-              data: ShadThemeData(
-                colorScheme: ShadColorScheme.fromName('slate'),
-                brightness: Brightness.light,
-              ),
-            ),
-          ],
-          themeBuilder: (context, theme, child) {
-            return ShadTheme(
-              data: theme,
-              child: child,
-            );
-          },
-        ),
       ],
       appBuilder: (context, child) {
-        return child;
+        return MaterialApp(
+          themeMode: ThemeMode.light,
+          theme: ThemeData(
+            primaryColor: kColors.primary80,
+            iconTheme: const IconThemeData(
+              color: kColors.primary10,
+            ),
+          ),
+          home: Scaffold(
+            body: child,
+          ),
+        );
       },
     );
   }

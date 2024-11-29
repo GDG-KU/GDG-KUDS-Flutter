@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gdg_dsgn/ui/component/gdg_button.dart';
 import 'package:gdg_dsgn/ui/theme/color_scheme.dart';
@@ -22,9 +20,6 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    log(
-      MediaQuery.of(context).devicePixelRatio.toString(),
-    );
     if (!isInitialized) {
       GetIt.I.registerSingleton<Util>(Util(context));
       isInitialized = true;
@@ -42,14 +37,17 @@ class _MainAppState extends State<MainApp> {
           child: Center(
             child: GdgButton(
               onPressed: () {},
-              icon: const Icon(Icons.share),
-              child: Text(
-                'Share',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16.pxToDP,
-                ),
-              ),
+              // icon: const Icon(Icons.share),
+              // child: const Text('Share'),
+              child: Icon(Icons.check, color: Colors.green),
+
+              // child: Text(
+              //   'Share',
+              //   style: TextStyle(
+              //     color: Colors.white,
+              //     fontSize: 16.pxToDP,
+              //   ),
+              // ),
             ),
           ),
         ),
