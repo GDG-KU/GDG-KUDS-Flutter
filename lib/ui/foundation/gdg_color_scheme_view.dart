@@ -1,108 +1,137 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:gdg_dsgn/ui/theme/color_scheme.dart';
+import 'package:gdg_dsgn/ui/theme/theme.dart';
 
 class GdgColorSchemeView extends StatelessWidget {
   const GdgColorSchemeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
-    final colors = [
-      // (colorScheme.background, "Background"),
-      // (colorScheme.foreground, "Foreground"),
-      // (colorScheme.card, "Card"),
-      // (colorScheme.cardForeground, "Card Foreground"),
-      // (colorScheme.popover, "Popover"),
-      // (colorScheme.popoverForeground, "Popover Foreground"),
-      // (colorScheme.primary, "Primary"),
-      // (colorScheme.primaryForeground, "Primary Foreground"),
-      // (colorScheme.secondary, "Secondary"),
-      // (colorScheme.secondaryForeground, "Secondary Foreground"),
-      // (colorScheme.muted, "Muted"),
-      // (colorScheme.mutedForeground, "Muted Foreground"),
-      // (colorScheme.accent, "Accent"),
-      // (colorScheme.accentForeground, "Accent Foreground"),
-      // (colorScheme.destructive, "Destructive"),
-      // (colorScheme.destructiveForeground, "Destructive Foreground"),
-      // (colorScheme.border, "Border"),
-      // (colorScheme.input, "Input"),
-      // (colorScheme.ring, "Ring"),
-      // (colorScheme.selection, "Selection"),
+    final textTheme = GdgTheme.of(context).textTheme;
+    final primaries = [
+      [GdgColors.primary.shade100, "100"],
+      [GdgColors.primary.shade200, "200"],
+      [GdgColors.primary.shade300, "300"],
+      [GdgColors.primary.shade400, "400"],
+      [GdgColors.primary.shade500, "500"],
+      [GdgColors.primary.shade600, "600"],
+      [GdgColors.primary.shade700, "700"],
+      [GdgColors.primary.shade800, "800"],
+      [GdgColors.primary.shade900, "900"],
     ];
-    // return SafeArea(
-    //   child: Padding(
-    //     padding: const EdgeInsets.all(17.0),
-    //     child: ListView.builder(
-    //       itemBuilder: (context, index) {
-    //         return InkWell(
-    //           borderRadius: BorderRadius.circular(8),
-    //           onTap: () {
-    //             Clipboard.setData(
-    //               ClipboardData(
-    //                 text: "0x${colors[index].$1.value.toRadixString(16)}",
-    //               ),
-    //             );
-    //           },
-    //           child: Container(
-    //             padding: const EdgeInsets.all(10),
-    //             margin: const EdgeInsets.only(bottom: 8),
-    //             child: Row(
-    //               crossAxisAlignment: CrossAxisAlignment.start,
-    //               children: [
-    //                 Container(
-    //                   height: 100,
-    //                   width: 80,
-    //                   decoration: BoxDecoration(
-    //                     color: colors[index].$1,
-    //                     borderRadius: BorderRadius.circular(8),
-    //                     border: Border.all(
-    //                       color: colorScheme.border,
-    //                     ),
-    //                     boxShadow: const [
-    //                       BoxShadow(
-    //                         color: Colors.black12,
-    //                         offset: Offset(1, 2),
-    //                         blurRadius: 4,
-    //                       ),
-    //                     ],
-    //                   ),
-    //                 ),
-    //                 const SizedBox(width: 17),
-    //                 Padding(
-    //                   padding: const EdgeInsets.symmetric(vertical: 4.0),
-    //                   child: Column(
-    //                     crossAxisAlignment: CrossAxisAlignment.start,
-    //                     children: [
-    //                       Text(
-    //                         colors[index].$2,
-    //                         style: context.getTextTheme.h4,
-    //                       ),
-    //                       const SizedBox(height: 4),
-    //                       Row(
-    //                         children: [
-    //                           Text(
-    //                             "0x${colors[index].$1.value.toRadixString(16)}",
-    //                             style: context.getTextTheme.small,
-    //                           ),
-    //                           const SizedBox(width: 3),
-    //                           Icon(
-    //                             Icons.copy,
-    //                             size: 16,
-    //                             color: colorScheme.primary,
-    //                           ),
-    //                         ],
-    //                       ),
-    //                     ],
-    //                   ),
-    //                 ),
-    //               ],
-    //             ),
-    //           ),
-    //         );
-    //       },
-    //       itemCount: colors.length,
-    //     ),
-    //   ),
-    // );
+
+    final blues = [
+      [GdgColors.blue.shade100, "100"],
+      [GdgColors.blue.shade300, "300"],
+      [GdgColors.blue.shade500, "500"],
+    ];
+
+    final greens = [
+      [GdgColors.green.shade100, "100"],
+      [GdgColors.green.shade300, "300"],
+      [GdgColors.green.shade500, "500"],
+    ];
+
+    final yellows = [
+      [GdgColors.yellow.shade100, "100"],
+      [GdgColors.yellow.shade300, "300"],
+      [GdgColors.yellow.shade500, "500"],
+    ];
+
+    final reds = [
+      [GdgColors.red.shade100, "100"],
+      [GdgColors.red.shade300, "300"],
+      [GdgColors.red.shade500, "500"],
+    ];
+
+    Widget item(List<Object> color) {
+      final foregroundColor = (color[0] as Color).computeLuminance() > 0.5
+          ? Colors.black
+          : Colors.white;
+      return Container(
+        color: color[0] as Color,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 17,
+          vertical: 10,
+        ),
+        child: Row(
+          children: [
+            Text(
+              "0x${(color[0] as Color).value.toRadixString(16)}",
+              style: textTheme.body2Medium.copyWith(
+                color: foregroundColor,
+              ),
+            ),
+            const Spacer(),
+            Text(
+              color[1] as String,
+              style: textTheme.body2Medium.copyWith(
+                color: foregroundColor,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Icon(Icons.copy, size: 16, color: foregroundColor),
+          ],
+        ),
+      );
+    }
+
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(17.0),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: Text("Primary", style: textTheme.h3)),
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              sliver: SliverList.builder(
+                itemBuilder: (context, index) {
+                  return item(primaries[index]);
+                },
+                itemCount: primaries.length,
+              ),
+            ),
+            const SliverToBoxAdapter(child: Divider(height: 30)),
+            SliverToBoxAdapter(child: Text("Secondary", style: textTheme.h3)),
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              sliver: SliverList.builder(
+                itemBuilder: (context, index) {
+                  return item(blues[index]);
+                },
+                itemCount: blues.length,
+              ),
+            ),
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              sliver: SliverList.builder(
+                itemBuilder: (context, index) {
+                  return item(greens[index]);
+                },
+                itemCount: greens.length,
+              ),
+            ),
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              sliver: SliverList.builder(
+                itemBuilder: (context, index) {
+                  return item(yellows[index]);
+                },
+                itemCount: yellows.length,
+              ),
+            ),
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              sliver: SliverList.builder(
+                itemBuilder: (context, index) {
+                  return item(reds[index]);
+                },
+                itemCount: reds.length,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/foundation/gdg_typography.dart';
+import 'package:gdg_dsgn/ui/foundation/gdg_color_scheme_view.dart';
 import 'package:gdg_dsgn/ui/theme/data.dart';
 import 'package:gdg_dsgn/ui/theme/theme.dart';
 
@@ -27,9 +27,7 @@ class _MainAppState extends State<MainApp> {
         );
       },
       home: const Scaffold(
-        body: GdgTypographyView(
-          text: "Hello, World!",
-        ),
+        body: GdgColorSchemeView(),
       ),
     );
   }
