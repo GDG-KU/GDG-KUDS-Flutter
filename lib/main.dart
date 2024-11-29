@@ -26,7 +26,11 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: const GdgTypographyView(),
+      home: const Scaffold(
+        body: GdgTypographyView(
+          text: "Hello, World!",
+        ),
+      ),
     );
   }
 }

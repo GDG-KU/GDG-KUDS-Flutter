@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/color_scheme.dart';
-import 'package:gdg_dsgn/util.dart';
-import 'package:get_it/get_it.dart';
+import 'package:gdg_dsgn/ui/theme/data.dart';
+import 'package:gdg_dsgn/ui/theme/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
@@ -20,14 +19,8 @@ class WidgetbookApp extends StatefulWidget {
 }
 
 class _WidgetbookAppState extends State<WidgetbookApp> {
-  bool isInitialized = false;
-
   @override
   Widget build(BuildContext context) {
-    if (!isInitialized) {
-      GetIt.I.registerSingleton<Util>(Util(context));
-      isInitialized = true;
-    }
     return Widgetbook(
       directories: directories,
       themeMode: ThemeMode.light,
@@ -45,15 +38,12 @@ class _WidgetbookAppState extends State<WidgetbookApp> {
       appBuilder: (context, child) {
         return MaterialApp(
           themeMode: ThemeMode.light,
-          theme: ThemeData(
-            primaryColor: kColors.primary80,
-            iconTheme: const IconThemeData(
-              color: kColors.primary10,
-            ),
-          ),
-          home: Scaffold(
-            body: child,
-          ),
+          builder: (context, child) {
+            return GdgTheme(
+              data: GdgThemeData(),
+              child: child!,
+            );
+          },
         );
       },
     );

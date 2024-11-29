@@ -17,6 +17,7 @@ class GdgTextTheme {
     required this.body2Small,
     required this.label1,
     required this.label2,
+    required this.caption,
   });
   final TextStyle h1;
   final TextStyle h2;
@@ -31,11 +32,13 @@ class GdgTextTheme {
   final TextStyle body2Small;
   final TextStyle label1;
   final TextStyle label2;
+  final TextStyle caption;
 
   static GdgTextTheme get defaultTextTheme {
     const defaultFontFamily = "Pretendard";
     const black90 = Color(0xE6000000);
     const black85 = Color(0xD9000000);
+    const grey = Color(0xFFADADAD);
 
     return const GdgTextTheme(
       h1: TextStyle(
@@ -142,6 +145,14 @@ class GdgTextTheme {
         height: 18 / 12,
         fontWeight: FontWeight.w500,
         color: black85,
+        fontFamily: defaultFontFamily,
+      ),
+      caption: TextStyle(
+        inherit: false,
+        fontSize: 11,
+        height: 18 / 12,
+        fontWeight: FontWeight.normal,
+        color: grey,
         fontFamily: defaultFontFamily,
       ),
     );

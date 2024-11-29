@@ -6,7 +6,7 @@ import 'package:gdg_dsgn/ui/component/gdg_button.dart';
 @widgetbook.UseCase(name: 'Default', type: GdgButton)
 Widget buildNewWidgetUseCase(BuildContext context) {
   return GdgButton(
-    onPressed: () {},
-    child: const Text("Click!"),
-  );
+      // onPressed: () {},
+      // child: const Text("Click!"),
+      );
 }

@@ -17,8 +17,8 @@ class GdgTheme extends StatelessWidget {
 
   static GdgThemeData? maybeOf(BuildContext context) {
     final provider =
-        context.getElementForInheritedWidgetOfExactType<GdgInheritedTheme>();
-    return (provider as GdgInheritedTheme?)?.theme.data;
+        context.dependOnInheritedWidgetOfExactType<GdgInheritedTheme>();
+    return provider?.theme.data;
   }
 
   @override
