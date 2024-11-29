@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/foundation/gdg_color_scheme_view.dart';
+import 'package:gdg_dsgn/ui/component/gdg_button.dart';
 import 'package:gdg_dsgn/ui/theme/data.dart';
-import 'package:gdg_dsgn/ui/theme/theme.dart';
+import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -26,8 +26,15 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: const Scaffold(
-        body: GdgColorSchemeView(),
+      home: Scaffold(
+        body: Center(
+          child: GdgButton(
+            onPressed: () {},
+            // icon: const Icon(Icons.share, size: 20),
+            child: const Text('Click Here!'),
+            // child: const Icon(Icons.share, size: 20),
+          ),
+        ),
       ),
     );
   }

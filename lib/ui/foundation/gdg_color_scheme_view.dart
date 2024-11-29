@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/color_scheme.dart';
-import 'package:gdg_dsgn/ui/theme/theme.dart';
+import 'package:gdg_dsgn/ui/theme/gdg_color_scheme.dart';
+import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
 
 class GdgColorSchemeView extends StatelessWidget {
   const GdgColorSchemeView({super.key});

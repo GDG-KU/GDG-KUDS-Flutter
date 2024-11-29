@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/color_scheme.dart';
+import 'package:gdg_dsgn/ui/theme/gdg_color_scheme.dart';
 import 'package:gdg_dsgn/ui/theme/text_theme.dart';
 
 @immutable
 class GdgThemeData {
   final GdgColorScheme colorScheme;
   final GdgTextTheme textTheme;
+  // final GdgButtonTheme buttonTheme;
 
   const GdgThemeData._internal({
     required this.colorScheme,
