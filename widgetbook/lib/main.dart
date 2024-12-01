@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
+import 'package:gdg_dsgn/ui/theme/data.dart';
+import 'package:gdg_dsgn/ui/theme/theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
@@ -10,9 +11,14 @@ void main() {
 }
 
 @widgetbook.App()
-class WidgetbookApp extends StatelessWidget {
+class WidgetbookApp extends StatefulWidget {
   const WidgetbookApp({super.key});
 
+  @override
+  State<WidgetbookApp> createState() => _WidgetbookAppState();
+}
+
+class _WidgetbookAppState extends State<WidgetbookApp> {
   @override
   Widget build(BuildContext context) {
     return Widgetbook(
@@ -28,26 +34,17 @@ class WidgetbookApp extends StatelessWidget {
             Devices.android.smallTablet,
           ],
         ),
-        ThemeAddon(
-          themes: [
-            WidgetbookTheme(
-              name: 'Light',
-              data: ShadThemeData(
-                colorScheme: ShadColorScheme.fromName('slate'),
-                brightness: Brightness.light,
-              ),
-            ),
-          ],
-          themeBuilder: (context, theme, child) {
-            return ShadTheme(
-              data: theme,
-              child: child,
-            );
-          },
-        ),
       ],
       appBuilder: (context, child) {
-        return child;
+        return MaterialApp(
+          themeMode: ThemeMode.light,
+          builder: (context, child) {
+            return GdgTheme(
+              data: GdgThemeData(),
+              child: child!,
+            );
+          },
+        );
       },
     );
   }
