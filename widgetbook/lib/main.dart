@@ -35,14 +35,6 @@ class WidgetbookApp extends StatelessWidget {
           data: GdgThemeData(),
           child: child,
         );
-        // return MaterialApp(
-        //   builder: (context, child) {
-        //     return GdgTheme(
-        //       data: GdgThemeData(),
-        //       child: child!,
-        //     );
-        //   },
-        // );
       },
     );
   }
