@@ -7,7 +7,7 @@ enum GdgCheckBoxVariant {
   enabled,
 }
 
-class GdgCheckbox extends StatefulWidget {
+class GdgCheckbox extends StatelessWidget {
   const GdgCheckbox({
     super.key,
     required this.value,
@@ -17,56 +17,43 @@ class GdgCheckbox extends StatefulWidget {
   });
 
   final bool value;
-  final void Function(bool? value)? onChanged;
+  final void Function(bool value)? onChanged;
   final GdgColor color;
   final double tapTargetSize;
 
-  @override
-  State<GdgCheckbox> createState() => _GdgCheckboxState();
-}
-
-class _GdgCheckboxState extends State<GdgCheckbox> {
   Color borderColor(GdgCheckBoxVariant variant) {
     if (variant == GdgCheckBoxVariant.disabled) {
-      return widget.color == GdgColors.primary
-          ? widget.color.shade400
-          : widget.color.shade100;
+      return color == GdgColors.primary ? color.shade400 : color.shade100;
     }
-    if (widget.value) {
-      return widget.color == GdgColors.primary
-          ? widget.color.shade800
-          : widget.color.shade500;
+    if (value) {
+      return color == GdgColors.primary ? color.shade800 : color.shade500;
     }
-    return widget.color == GdgColors.primary
-        ? widget.color.shade700
-        : widget.color.shade300;
+    return color == GdgColors.primary ? color.shade700 : color.shade300;
   }
 
   Color fillColor(GdgCheckBoxVariant variant) {
     if (variant == GdgCheckBoxVariant.disabled) {
       return GdgColors.primary.shade200;
     }
-    if (widget.value) {
-      return widget.color == GdgColors.primary
-          ? widget.color.shade800
-          : widget.color.shade500;
+    if (value) {
+      return color == GdgColors.primary ? color.shade800 : color.shade500;
     }
     return Colors.transparent;
   }
 
   @override
   Widget build(BuildContext context) {
-    final variant = widget.onChanged == null
+    final variant = onChanged == null
         ? GdgCheckBoxVariant.disabled
         : GdgCheckBoxVariant.enabled;
     return GestureDetector(
       onTap: () {
-        widget.onChanged!(!widget.value);
+        onChanged!(!value);
       },
       child: Container(
         color: Colors.transparent,
-        width: math.max(widget.tapTargetSize, 14),
-        height: math.max(widget.tapTargetSize, 14),
+        width: math.max(tapTargetSize, 14),
+        height: math.max(tapTargetSize, 14),
         child: Center(
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 100),
@@ -81,11 +68,11 @@ class _GdgCheckboxState extends State<GdgCheckbox> {
                 width: 1.73,
               ),
             ),
-            child: const Center(
+            child: Center(
               child: Icon(
                 Icons.check,
                 size: 10,
-                color: Colors.white,
+                color: value ? Colors.white : Colors.transparent,
                 weight: 700,
                 grade: 200,
               ),
@@ -96,26 +83,3 @@ class _GdgCheckboxState extends State<GdgCheckbox> {
     );
   }
 }
-
-// (new) Checkbox Checkbox({
-//   Key? key,
-//   required bool? value,
-//   bool tristate = false,
-//   required void Function(bool?)? onChanged,
-//   MouseCursor? mouseCursor,
-//   Color? activeColor,
-//   WidgetStateProperty<Color?>? fillColor,
-//   Color? checkColor,
-//   Color? focusColor,
-//   Color? hoverColor,
-//   WidgetStateProperty<Color?>? overlayColor,
-//   double? splashRadius,
-//   MaterialTapTargetSize? materialTapTargetSize,
-//   VisualDensity? visualDensity,
-//   FocusNode? focusNode,
-//   bool autofocus = false,
-//   OutlinedBorder? shape,
-//   BorderSide? side,
-//   bool isError = false,
-//   String? semanticLabel,
-// })

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/component/gdg_badge.dart';
+import 'package:gdg_dsgn/ui/component/gdg_tag.dart';
 import 'package:gdg_dsgn/ui/theme/data.dart';
 import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
 
@@ -28,10 +28,19 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: const Scaffold(
+      home: Scaffold(
         body: Center(
-          child: GdgBadge.deep(
-            child: Text('Label'),
+          child: GdgTag.medium(
+            value: isChecked,
+            isFilled: true,
+            // color: GdgColors.blue,
+            icon: Icons.check,
+            onChanged: (value) {
+              setState(() {
+                isChecked = value;
+              });
+            },
+            child: const Text('GDGasdffds'),
           ),
         ),
       ),
