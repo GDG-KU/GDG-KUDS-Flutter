@@ -30,14 +30,8 @@ class _MainAppState extends State<MainApp> {
       },
       home: const Scaffold(
         body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              GdgBadge.deep(
-                child: Text('Label'),
-              ),
-            ],
+          child: GdgBadge.deep(
+            child: Text('Label'),
           ),
         ),
       ),

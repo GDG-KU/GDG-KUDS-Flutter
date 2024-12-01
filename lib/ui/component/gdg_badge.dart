@@ -68,21 +68,23 @@ class GdgBadge extends StatelessWidget {
       fontWeight: FontWeight.w500,
       fontSize: 11,
     );
-    return Container(
-      constraints: const BoxConstraints(
-        minWidth: 50,
-        minHeight: 19.2,
-        maxHeight: 19.2,
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 8.6),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(999),
-        color: colors(variant).backgroundColor,
-      ),
-      child: DefaultTextStyle(
-        style: textStyle,
-        child: Center(
-          child: child,
+    return FittedBox(
+      child: Container(
+        constraints: const BoxConstraints(
+          minWidth: 50,
+          minHeight: 19.2,
+          maxHeight: 19.2,
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 8.6),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(999),
+          color: colors(variant).backgroundColor,
+        ),
+        child: DefaultTextStyle(
+          style: textStyle,
+          child: Center(
+            child: child,
+          ),
         ),
       ),
     );
