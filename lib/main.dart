@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/component/gdg_button.dart';
+import 'package:gdg_dsgn/ui/component/gdg_tag.dart';
 import 'package:gdg_dsgn/ui/theme/data.dart';
 import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
 
@@ -17,6 +17,8 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   bool isInitialized = false;
 
+  bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,11 +30,17 @@ class _MainAppState extends State<MainApp> {
       },
       home: Scaffold(
         body: Center(
-          child: GdgButton(
-            onPressed: () {},
-            icon: const Icon(Icons.share, size: 20),
-            child: const Text('Click Here!'),
-            // child: const Icon(Icons.share, size: 20),
+          child: GdgTag.medium(
+            value: isChecked,
+            isFilled: true,
+            // color: GdgColors.blue,
+            icon: Icons.check,
+            onChanged: (value) {
+              setState(() {
+                isChecked = value;
+              });
+            },
+            child: const Text('GDGasdffds'),
           ),
         ),
       ),
