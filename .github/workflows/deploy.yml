@@ -12,8 +12,9 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
 
     steps:
       - name: Checkout repository
