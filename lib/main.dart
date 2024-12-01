@@ -36,23 +36,21 @@ class _MainAppState extends State<MainApp> {
             children: [
               GdgCheckbox(
                 value: isChecked,
-                onChanged: null,
-                // onChanged: (value) {
-                //   setState(() {
-                //     isChecked = value!;
-                //   });
-                // },
-                // color: GdgColors.red,
+                onChanged: (value) {
+                  setState(() {
+                    isChecked = value!;
+                  });
+                },
               ),
               const Text(
                 "약관 동의?",
                 style: TextStyle(
                   inherit: false,
-                  fontSize: 12.2,
-                  height: 22 / 14,
+                  fontSize: 14,
+                  height: 20 / 16,
                   fontWeight: FontWeight.w500,
                   color: Colors.black87,
-                  fontFamily: "pretendard",
+                  fontFamily: "Pretendard",
                 ),
               )
             ],
