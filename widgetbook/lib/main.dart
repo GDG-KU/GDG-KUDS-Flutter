@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gdg_dsgn/ui/theme/data.dart';
-import 'package:gdg_dsgn/ui/theme/theme.dart';
+import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
@@ -11,17 +11,12 @@ void main() {
 }
 
 @widgetbook.App()
-class WidgetbookApp extends StatefulWidget {
+class WidgetbookApp extends StatelessWidget {
   const WidgetbookApp({super.key});
 
   @override
-  State<WidgetbookApp> createState() => _WidgetbookAppState();
-}
-
-class _WidgetbookAppState extends State<WidgetbookApp> {
-  @override
   Widget build(BuildContext context) {
-    return Widgetbook(
+    return Widgetbook.material(
       directories: directories,
       themeMode: ThemeMode.light,
       addons: [
@@ -36,15 +31,18 @@ class _WidgetbookAppState extends State<WidgetbookApp> {
         ),
       ],
       appBuilder: (context, child) {
-        return MaterialApp(
-          themeMode: ThemeMode.light,
-          builder: (context, child) {
-            return GdgTheme(
-              data: GdgThemeData(),
-              child: child!,
-            );
-          },
+        return GdgTheme(
+          data: GdgThemeData(),
+          child: child,
         );
+        // return MaterialApp(
+        //   builder: (context, child) {
+        //     return GdgTheme(
+        //       data: GdgThemeData(),
+        //       child: child!,
+        //     );
+        //   },
+        // );
       },
     );
   }

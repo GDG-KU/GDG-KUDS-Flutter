@@ -19,6 +19,7 @@ class GdgTextTheme {
     required this.label2,
     required this.caption,
   });
+
   final TextStyle h1;
   final TextStyle h2;
   final TextStyle h3;
