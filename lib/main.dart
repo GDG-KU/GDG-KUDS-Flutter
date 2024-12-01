@@ -30,7 +30,7 @@ class _MainAppState extends State<MainApp> {
         body: Center(
           child: GdgButton(
             onPressed: () {},
-            // icon: const Icon(Icons.share, size: 20),
+            icon: const Icon(Icons.share, size: 20),
             child: const Text('Click Here!'),
             // child: const Icon(Icons.share, size: 20),
           ),
