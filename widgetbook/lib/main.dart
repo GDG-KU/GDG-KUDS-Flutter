@@ -20,7 +20,6 @@ class WidgetbookApp extends StatelessWidget {
       directories: directories,
       themeMode: ThemeMode.light,
       addons: [
-        TextScaleAddon(),
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhoneSE,
