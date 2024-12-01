@@ -13,9 +13,10 @@ Widget buildNewWidgetUseCase(BuildContext context) {
     padding: const EdgeInsets.all(17.0),
     child: Center(
       child: GdgButton(
-        onPressed: context.knobs.boolean(label: "enabled", initialValue: true)
-            ? () {}
-            : null,
+        onPressed:
+            context.knobs.boolean(label: "is_enabled", initialValue: true)
+                ? () {}
+                : null,
         icon: Icon(
           context.knobs.iconData(label: "icon"),
           size: 20,

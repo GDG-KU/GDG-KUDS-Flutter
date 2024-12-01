@@ -9,7 +9,7 @@ Widget buildNewWidgetUseCase(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(17.0),
     child: Center(
-      child: context.knobs.boolean(label: "isLight", initialValue: false)
+      child: context.knobs.boolean(label: "is_light", initialValue: false)
           ? GdgBadge.light(
               color: context.knobs.gdgColor(label: "color"),
               child: Text(
