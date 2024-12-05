@@ -199,7 +199,10 @@ class _GdgInputState extends State<GdgInput> {
           },
           BlendMode.srcIn,
         ),
-        child: Icon(iconData),
+        child: Icon(
+          iconData,
+          size: widget.size == GdgInputSize.medium ? 20 : 18,
+        ),
       ),
     );
   }
@@ -258,6 +261,7 @@ class _GdgInputState extends State<GdgInput> {
                           obscuringCharacter: widget.obscuringCharacter,
                           cursorWidth: widget.cursorWidth,
                           decoration: const InputDecoration(
+                            filled: false,
                             isDense: true,
                             contentPadding: EdgeInsets.zero,
                             border: InputBorder.none,

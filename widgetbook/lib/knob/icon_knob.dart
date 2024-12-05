@@ -11,7 +11,7 @@ extension IconKnobBuilder on KnobsBuilder {
           label: label,
           initialValue: initialValue,
         ),
-      )!;
+      );
 }
 
 class IconKnob extends Knob<IconData?> {
@@ -30,6 +30,7 @@ class IconKnob extends Knob<IconData?> {
             "add",
             "favorite",
             "download",
+            "close",
           ],
           initialValue: "none",
         ),
@@ -42,8 +43,9 @@ class IconKnob extends Knob<IconData?> {
       "add" => Icons.add,
       "favorite" => Icons.favorite,
       "download" => Icons.download,
+      "close" => Icons.close,
       "none" => null,
-      _ => Icons.share,
+      _ => null,
     };
   }
 }

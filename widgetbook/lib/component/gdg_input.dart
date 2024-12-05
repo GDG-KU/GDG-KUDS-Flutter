@@ -22,10 +22,9 @@ Widget buildNewWidgetUseCase(BuildContext context) {
   //   label: "prefixIcon",
   //   initialValue: Icons.person,
   // );
-  // final suffixIcon = context.knobs.iconData(
-  //   label: "suffixIcon",
-  //   initialValue: Icons.person,
-  // );
+  final suffixIcon = context.knobs.iconData(
+    label: "suffixIcon",
+  );
   final isObscure = context.knobs.boolean(
     label: "is_obscure",
     initialValue: false,
@@ -41,7 +40,7 @@ Widget buildNewWidgetUseCase(BuildContext context) {
                 label: label,
                 helpText: helpText,
                 // prefix: prefixIcon,
-                // suffix: suffixIcon,
+                suffix: suffixIcon,
                 obscureText: isObscure,
                 state: state,
               )
@@ -49,7 +48,7 @@ Widget buildNewWidgetUseCase(BuildContext context) {
                 label: label,
                 helpText: helpText,
                 // prefix: prefixIcon,
-                // suffix: suffixIcon,
+                suffix: suffixIcon,
                 obscureText: isObscure,
                 state: state,
               ),
