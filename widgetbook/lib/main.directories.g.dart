@@ -15,9 +15,10 @@ import 'package:widgetbook_workspace/component/gdg_button.dart' as _i3;
 import 'package:widgetbook_workspace/component/gdg_checkbox.dart' as _i4;
 import 'package:widgetbook_workspace/component/gdg_input.dart' as _i5;
 import 'package:widgetbook_workspace/component/gdg_tag.dart' as _i6;
+import 'package:widgetbook_workspace/example/gdg_example.dart' as _i7;
 import 'package:widgetbook_workspace/foundation/gdg_color_scheme_view.dart'
-    as _i7;
-import 'package:widgetbook_workspace/foundation/gdg_typography.dart' as _i8;
+    as _i8;
+import 'package:widgetbook_workspace/foundation/gdg_typography.dart' as _i9;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookFolder(
@@ -64,20 +65,32 @@ final directories = <_i1.WidgetbookNode>[
         ],
       ),
       _i1.WidgetbookFolder(
+        name: 'example',
+        children: [
+          _i1.WidgetbookLeafComponent(
+            name: 'GdgExample',
+            useCase: _i1.WidgetbookUseCase(
+              name: 'Default',
+              builder: _i7.buildNewWidgetUseCase,
+            ),
+          )
+        ],
+      ),
+      _i1.WidgetbookFolder(
         name: 'foundation',
         children: [
           _i1.WidgetbookLeafComponent(
             name: 'GdgColorSchemeView',
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
-              builder: _i7.buildGdgTypographyUseCase,
+              builder: _i8.buildGdgTypographyUseCase,
             ),
           ),
           _i1.WidgetbookLeafComponent(
             name: 'GdgTypographyView',
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
-              builder: _i8.buildGdgTypographyUseCase,
+              builder: _i9.buildGdgTypographyUseCase,
             ),
           ),
         ],

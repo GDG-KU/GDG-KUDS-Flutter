@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gdg_dsgn/ui/component/gdg_input.dart';
+import 'package:gdg_dsgn/ui/example/gdg_example.dart';
 import 'package:gdg_dsgn/ui/theme/data.dart';
 import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
 
@@ -29,16 +30,8 @@ class _MainAppState extends State<MainApp> {
         );
       },
       home: const Scaffold(
-        body: Center(
-          child: Padding(
-            padding: EdgeInsets.all(24.0),
-            child: GdgInput.small(
-              label: "Password",
-              helpText: "Error!",
-              state: GdgInputState.error,
-            ),
-          ),
-        ),
+        backgroundColor: Colors.white,
+        body: GdgExample(),
       ),
     );
   }
