@@ -221,7 +221,7 @@ class _GdgInputState extends State<GdgInput> {
               children: [
                 if (widget.label != null)
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 2.0),
+                    padding: const EdgeInsets.only(bottom: 4.0),
                     child: Text(
                       widget.label!,
                       style: switch (widget.size) {
