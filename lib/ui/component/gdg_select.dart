@@ -15,7 +15,6 @@ class GdgSelect<T> extends StatefulWidget {
     this.hintText = "Select",
     this.optionBuilder,
     this.controller,
-    this.alignment = AlignmentDirectional.centerStart,
     this.color = GdgColors.primary,
   });
 
@@ -24,7 +23,6 @@ class GdgSelect<T> extends StatefulWidget {
   final Widget Function(T option)? optionBuilder;
   final OverlayPortalController? controller;
   final ValueChanged<T> onChanged;
-  final AlignmentGeometry alignment;
   final GdgColor color;
   final T? value;
 
