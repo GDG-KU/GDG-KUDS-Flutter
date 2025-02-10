@@ -1,7 +1,10 @@
-name: gdg_dsgn
-description: "A new Flutter project."
-publish_to: "none"
-version: 0.1.0
+name: gdgku_design
+description: Google Developer Group On Korea University Design System for Flutter.
+repository: https://github.com/GDG-KU/GDG-KUDS-Flutter/
+homepage: https://gdg-ku.github.io/GDG-KUDS-Flutter/
+
+# publish_to: "none"
+version: 0.0.0
 
 environment:
   sdk: ^3.5.1

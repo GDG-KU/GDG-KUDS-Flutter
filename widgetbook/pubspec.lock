@@ -248,13 +248,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-  gdg_dsgn:
+  gdgku_design:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.1.0"
+    version: "0.0.0"
   get_it:
     dependency: "direct main"
     description:

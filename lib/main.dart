@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/component/gdg_input.dart';
-import 'package:gdg_dsgn/ui/example/gdg_example.dart';
-import 'package:gdg_dsgn/ui/theme/data.dart';
-import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
+import 'package:gdgku_design/ui/component/gdg_select.dart';
+import 'package:gdgku_design/ui/example/gdg_example.dart';
+import 'package:gdgku_design/ui/theme/data.dart';
+import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -31,7 +31,16 @@ class _MainAppState extends State<MainApp> {
       },
       home: const Scaffold(
         backgroundColor: Colors.white,
-        body: GdgExample(),
+        body: Center(
+          child: GdgSelect(
+            width: 200,
+            options: [
+              Text("data1"),
+              Text("data2"),
+              Text("data3"),
+            ],
+          ),
+        ),
       ),
     );
   }

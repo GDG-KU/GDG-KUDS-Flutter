@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/component/gdg_button.dart';
-import 'package:gdg_dsgn/ui/component/gdg_input.dart';
-import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
+import 'package:gdgku_design/ui/component/gdg_button.dart';
+import 'package:gdgku_design/ui/component/gdg_input.dart';
+import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 
 class GdgExample extends StatelessWidget {
   const GdgExample({super.key});
