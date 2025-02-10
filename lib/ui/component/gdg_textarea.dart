@@ -15,6 +15,7 @@ class GdgTextarea extends StatefulWidget {
     this.cursorColor = GdgColors.primary,
     this.label,
     this.decoration,
+    this.maxLines = 4,
     this.enabled = true,
   });
 
@@ -29,6 +30,7 @@ class GdgTextarea extends StatefulWidget {
   final String? label;
   final InputDecoration? decoration;
   final bool enabled;
+  final int maxLines;
 
   @override
   State<GdgTextarea> createState() => _GdgTextareaState();
@@ -159,7 +161,7 @@ class _GdgTextareaState extends State<GdgTextarea> {
                     onChanged: widget.onChanged,
                     cursorColor: widget.cursorColor,
                     cursorHeight: 13,
-                    maxLines: 5,
+                    maxLines: widget.maxLines,
                     scrollPadding: EdgeInsets.zero,
                     cursorWidth: widget.cursorWidth,
                     decoration: effectiveDecoration.copyWith(
