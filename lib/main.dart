@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:gdgku_design/ui/theme/data.dart';
 import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 
@@ -16,6 +17,8 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   bool isInitialized = false;
 
+  bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,9 +28,7 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: const Scaffold(
-        backgroundColor: Colors.white,
-      ),
+      home: const Scaffold(backgroundColor: Colors.white),
     );
   }
 }

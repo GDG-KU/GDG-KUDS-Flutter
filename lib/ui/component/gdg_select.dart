@@ -123,10 +123,11 @@ class _GdgSelectState<T> extends State<GdgSelect<T>> {
   }
 
   Border selectBorder(bool hasFocus) {
-    var color = GdgColors.primary[500];
-    if (hasFocus) {
-      color = GdgColors.primary[800];
-    }
+    var color = switch (widget.color) {
+      GdgColors.primary => hasFocus ? widget.color[800] : widget.color[500],
+      _ => hasFocus ? widget.color[500] : GdgColors.primary[500],
+    };
+
     return Border.all(color: color!);
   }
 
