@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/data.dart';
-import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
+import 'package:gdgku_design/ui/theme/data.dart';
+import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
@@ -20,7 +20,6 @@ class WidgetbookApp extends StatelessWidget {
       directories: directories,
       themeMode: ThemeMode.light,
       addons: [
-        TextScaleAddon(),
         DeviceFrameAddon(
           devices: [
             Devices.ios.iPhoneSE,
@@ -35,14 +34,6 @@ class WidgetbookApp extends StatelessWidget {
           data: GdgThemeData(),
           child: child,
         );
-        // return MaterialApp(
-        //   builder: (context, child) {
-        //     return GdgTheme(
-        //       data: GdgThemeData(),
-        //       child: child!,
-        //     );
-        //   },
-        // );
       },
     );
   }

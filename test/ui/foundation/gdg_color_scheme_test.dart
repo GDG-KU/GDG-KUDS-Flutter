@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gdg_dsgn/ui/foundation/gdg_color_scheme_view.dart';
+import 'package:gdgku_design/ui/foundation/gdg_color_scheme_view.dart';
 
 void main() {
   group('GdgColorScheme widget tests', () {

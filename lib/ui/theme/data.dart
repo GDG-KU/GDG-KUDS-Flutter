@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/gdg_color_scheme.dart';
-import 'package:gdg_dsgn/ui/theme/text_theme.dart';
+import 'package:gdgku_design/ui/theme/gdg_color_scheme.dart';
+import 'package:gdgku_design/ui/theme/text_theme.dart';
 
 @immutable
 class GdgThemeData {

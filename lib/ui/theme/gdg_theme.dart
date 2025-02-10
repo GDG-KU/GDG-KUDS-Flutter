@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/data.dart';
+import 'package:gdgku_design/ui/theme/data.dart';
 
 class GdgTheme extends StatelessWidget {
   const GdgTheme({

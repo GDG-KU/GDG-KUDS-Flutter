@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/gdg_theme.dart';
+import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 
 class GdgTypographyView extends StatelessWidget {
   const GdgTypographyView({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_dsgn/ui/theme/gdg_color_scheme.dart';
+import 'package:gdgku_design/ui/theme/gdg_color_scheme.dart';
 
 // TODO size variant 추가, medium icon 추가
 enum GdgButtonVariant {
