@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdgku_design/ui/component/gdg_select.dart';
-import 'package:gdgku_design/ui/example/gdg_example.dart';
+import 'package:gdgku_design/ui/component/gdg_textarea.dart';
 import 'package:gdgku_design/ui/theme/data.dart';
 import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 
@@ -17,7 +16,6 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   bool isInitialized = false;
-
   bool isChecked = false;
 
   @override
@@ -32,13 +30,15 @@ class _MainAppState extends State<MainApp> {
       home: const Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-          child: GdgSelect(
-            width: 200,
-            options: [
-              Text("data1"),
-              Text("data2"),
-              Text("data3"),
-            ],
+          child: Padding(
+            padding: EdgeInsets.all(30.0),
+            child: GdgTextarea(
+              label: "Label",
+              enabled: false,
+              decoration: InputDecoration(
+                hintText: "Hint",
+              ),
+            ),
           ),
         ),
       ),
