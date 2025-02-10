@@ -219,6 +219,11 @@ class _GdgButtonState extends State<GdgButton> {
           isPressed = false;
         });
       },
+      onTapCancel: () {
+        setState(() {
+          isPressed = false;
+        });
+      },
       child: AnimatedContainer(
         constraints: constraint(variant),
         curve: Curves.easeInOut,
