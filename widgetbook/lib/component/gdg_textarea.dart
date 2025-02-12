@@ -12,6 +12,10 @@ Widget buildNewWidgetUseCase(BuildContext context) {
       constraints: const BoxConstraints(maxWidth: 400),
       child: GdgTextarea(
         enabled: context.knobs.boolean(label: "enabled", initialValue: true),
+        scrollBarVisiblity: context.knobs.boolean(
+          label: "scrollBarVisiblity",
+          initialValue: true,
+        ),
         label: context.knobs.string(label: "label", initialValue: "Label"),
         maxLines: context.knobs.int.slider(
           label: "maxLines",

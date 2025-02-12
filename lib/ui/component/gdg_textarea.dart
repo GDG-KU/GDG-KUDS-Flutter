@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:gdgku_design/ui/theme/gdg_color_scheme.dart';
 import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 
+extension _WidgetX on Widget {
+  Widget withScrollbar(bool show) {
+    if (!show) return this;
+    return Scrollbar(
+      radius: const Radius.circular(100),
+      thickness: 2.6,
+      child: this,
+    );
+  }
+}
+
 class GdgTextarea extends StatefulWidget {
   const GdgTextarea({
     super.key,
@@ -17,6 +28,7 @@ class GdgTextarea extends StatefulWidget {
     this.decoration,
     this.maxLines = 4,
     this.enabled = true,
+    this.scrollBarVisiblity = true,
   });
 
   final TextEditingController? controller;
@@ -30,6 +42,7 @@ class GdgTextarea extends StatefulWidget {
   final String? label;
   final InputDecoration? decoration;
   final bool enabled;
+  final bool scrollBarVisiblity;
   final int maxLines;
 
   @override
@@ -173,7 +186,7 @@ class _GdgTextareaState extends State<GdgTextarea> {
                       enabledBorder: InputBorder.none,
                       hintStyle: textStyle(context, focused),
                     ),
-                  ),
+                  ).withScrollbar(widget.scrollBarVisiblity),
                 ),
               ],
             );

@@ -34,7 +34,7 @@ class _MainAppState extends State<MainApp> {
             padding: EdgeInsets.all(30.0),
             child: GdgTextarea(
               label: "Label",
-              enabled: false,
+              scrollBarVisiblity: false,
               decoration: InputDecoration(
                 hintText: "Hint",
               ),
