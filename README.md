@@ -24,7 +24,7 @@ widgetbook>lib>component(root 프로젝트와 동일한 디렉터리 구조를 �
 import 'package:flutter/material.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-import 'package:gdgku_design/ui/foundation/gdg_color_scheme.dart';
+import 'package:gdgku_design/src/foundation/gdg_color_scheme.dart';
 
 @widgetbook.UseCase(name: 'Default', type: NewWidget)
 Widget buildNewWidgetUseCase(BuildContext context) {
