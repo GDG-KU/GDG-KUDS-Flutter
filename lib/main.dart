@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gdgku_design/ui/component/gdg_textarea.dart';
 import 'package:gdgku_design/ui/theme/data.dart';
 import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 
@@ -26,7 +27,12 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: const Scaffold(backgroundColor: Colors.white),
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(
+          child: GdgTextarea(),
+        ),
+      ),
     );
   }
 }

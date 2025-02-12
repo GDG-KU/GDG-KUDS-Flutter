@@ -1,14 +1,31 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gdgku_design/ui/theme/gdg_color_scheme.dart';
 import 'package:gdgku_design/ui/theme/gdg_theme.dart';
 
 extension _WidgetX on Widget {
-  Widget withScrollbar(bool show) {
+  Widget withScrollbar(BuildContext context, bool show) {
     if (!show) return this;
-    return Scrollbar(
-      radius: const Radius.circular(100),
-      thickness: 2.6,
-      child: this,
+    if (kIsWeb) {
+      return Theme(
+        data: Theme.of(context).copyWith(
+          scrollbarTheme: ScrollbarThemeData(
+            thickness: WidgetStateProperty.all<double>(2.6),
+            radius: const Radius.circular(100),
+          ),
+        ),
+        child: this,
+      );
+    }
+
+    return MediaQuery.removePadding(
+      context: context,
+      removeTop: true,
+      child: Scrollbar(
+        radius: const Radius.circular(100),
+        thickness: 2.6,
+        child: this,
+      ),
     );
   }
 }
@@ -186,7 +203,10 @@ class _GdgTextareaState extends State<GdgTextarea> {
                       enabledBorder: InputBorder.none,
                       hintStyle: textStyle(context, focused),
                     ),
-                  ).withScrollbar(widget.scrollBarVisiblity),
+                  ).withScrollbar(
+                    context,
+                    widget.scrollBarVisiblity,
+                  ),
                 ),
               ],
             );
