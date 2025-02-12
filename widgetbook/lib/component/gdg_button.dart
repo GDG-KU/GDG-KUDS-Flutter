@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gdgku_design/gdgku_design.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
-import 'package:gdgku_design/ui/component/gdg_button.dart';
 import 'package:widgetbook_workspace/knob/color_knob.dart';
 import 'package:widgetbook_workspace/knob/icon_knob.dart';
 

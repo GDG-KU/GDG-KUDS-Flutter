@@ -1,4 +1,4 @@
-import 'package:gdgku_design/ui/component/gdg_input.dart';
+import 'package:gdgku_design/gdgku_design.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 extension InputStateKnobBuilder on KnobsBuilder {
