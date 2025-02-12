@@ -16,6 +16,8 @@ import 'package:widgetbook_workspace/component/gdg_checkbox.dart' as _i4;
 import 'package:widgetbook_workspace/component/gdg_input.dart' as _i5;
 import 'package:widgetbook_workspace/component/gdg_tag.dart' as _i6;
 import 'package:widgetbook_workspace/component/gdg_textarea.dart' as _i7;
+import 'package:widgetbook_workspace/component/gdg_select.dart' as _i6;
+import 'package:widgetbook_workspace/component/gdg_tag.dart' as _i7;
 import 'package:widgetbook_workspace/example/gdg_example.dart' as _i8;
 import 'package:widgetbook_workspace/foundation/gdg_color_scheme_view.dart'
     as _i9;
@@ -57,14 +59,14 @@ final directories = <_i1.WidgetbookNode>[
             ),
           ),
           _i1.WidgetbookLeafComponent(
-            name: 'GdgTag',
+            name: 'GdgSelect',
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
               builder: _i6.buildNewWidgetUseCase,
             ),
           ),
           _i1.WidgetbookLeafComponent(
-            name: 'GdgTextarea',
+            name: 'GdgTag',
             useCase: _i1.WidgetbookUseCase(
               name: 'Default',
               builder: _i7.buildNewWidgetUseCase,
