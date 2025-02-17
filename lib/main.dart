@@ -14,7 +14,6 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   bool isInitialized = false;
-
   bool isChecked = false;
 
   @override
@@ -26,7 +25,12 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: const Scaffold(backgroundColor: Colors.white),
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(
+          child: GdgTextarea(),
+        ),
+      ),
     );
   }
 }
