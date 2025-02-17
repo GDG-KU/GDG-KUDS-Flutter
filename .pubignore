@@ -52,3 +52,4 @@ app.\*.map.json
 /android/app/release
 
 /widgetbook/
+/lib/main.dart

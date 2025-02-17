@@ -1,4 +1,4 @@
-import 'package:gdgku_design/ui/theme/gdg_color_scheme.dart';
+import 'package:gdgku_design/gdgku_design.dart';
 import 'package:widgetbook/widgetbook.dart';
 
 extension ColorKnobBuilder on KnobsBuilder {

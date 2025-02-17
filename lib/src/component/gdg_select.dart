@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:gdgku_design/ui/theme/gdg_color_scheme.dart';
-import 'package:gdgku_design/ui/theme/gdg_theme.dart';
-
-part 'gdg_select_item.dart';
+part of '../../gdgku_design.dart';
 
 Widget _defaultOptionBuilder<T>(T option) => Text(option.toString());
 

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:gdgku_design/ui/theme/gdg_color_scheme.dart';
-import 'package:gdgku_design/ui/theme/gdg_theme.dart';
+part of '../../gdgku_design.dart';
 
 enum GdgInputSize {
   small,

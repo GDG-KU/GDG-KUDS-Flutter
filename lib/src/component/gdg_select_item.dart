@@ -1,4 +1,4 @@
-part of 'gdg_select.dart';
+part of '../../gdgku_design.dart';
 
 class GdgSelectItem<T> extends StatefulWidget {
   const GdgSelectItem({

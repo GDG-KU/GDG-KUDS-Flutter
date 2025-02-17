@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdgku_design/ui/component/gdg_textarea.dart';
-import 'package:gdgku_design/ui/theme/data.dart';
-import 'package:gdgku_design/ui/theme/gdg_theme.dart';
+import 'package:gdgku_design/gdgku_design.dart';
 
 void main() {
   runApp(const MainApp());
