@@ -14,14 +14,10 @@ Widget buildNewWidgetUseCase(BuildContext context) {
     initialValue: "Help Text",
   );
 
-  final state = context.knobs.gdgInpuState(
+  final state = context.knobs.gdgInputState(
     label: "state",
     initialValue: GdgInputState.normal,
   );
-  // final prefixIcon = context.knobs.iconData(
-  //   label: "prefixIcon",
-  //   initialValue: Icons.person,
-  // );
   final suffixIcon = context.knobs.iconData(
     label: "suffixIcon",
   );
