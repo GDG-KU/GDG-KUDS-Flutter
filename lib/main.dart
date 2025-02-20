@@ -25,12 +25,7 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: GdgTextarea(),
-        ),
-      ),
+      home: const Scaffold(backgroundColor: Colors.white),
     );
   }
 }
