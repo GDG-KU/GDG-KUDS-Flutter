@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:gdgku_design/ui/theme/gdg_color_scheme.dart';
-import 'package:gdgku_design/ui/theme/gdg_theme.dart';
+part of '../../gdgku_design.dart';
 
 extension _WidgetX on Widget {
   Widget withScrollbar(BuildContext context, bool show) {
