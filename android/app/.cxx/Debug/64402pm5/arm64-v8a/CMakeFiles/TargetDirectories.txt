@@ -1,0 +1,2 @@
+/Users/1kl1/Desktop/GDG-KUDS-Flutter/android/app/.cxx/Debug/64402pm5/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/1kl1/Desktop/GDG-KUDS-Flutter/android/app/.cxx/Debug/64402pm5/arm64-v8a/CMakeFiles/rebuild_cache.dir

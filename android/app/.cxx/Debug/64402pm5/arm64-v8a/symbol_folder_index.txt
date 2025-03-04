@@ -1,0 +1,1 @@
+/Users/1kl1/Desktop/GDG-KUDS-Flutter/build/app/intermediates/cxx/Debug/64402pm5/obj/arm64-v8a
