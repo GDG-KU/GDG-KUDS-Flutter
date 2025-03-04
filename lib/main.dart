@@ -28,11 +28,7 @@ class _MainAppState extends State<MainApp> {
       home: Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-          child: GdgSelect<String>(
-            value: "asdf",
-            options: const ["asdf", "fdsa"],
-            onChanged: (v) {},
-          ),
+          child: GdgTextarea(),
         ),
       ),
     );
