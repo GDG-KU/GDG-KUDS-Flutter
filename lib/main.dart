@@ -26,7 +26,7 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: Scaffold(
+      home: const Scaffold(
         backgroundColor: Colors.white,
         body: Center(),
       ),

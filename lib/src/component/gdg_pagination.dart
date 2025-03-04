@@ -2,7 +2,7 @@ part of '../../gdgku_design.dart';
 
 class GdgPagination extends StatefulWidget {
   const GdgPagination({
-    Key? key,
+    super.key,
     required this.currentPage,
     required this.totalPages,
     required this.onPageChanged,
