@@ -53,3 +53,5 @@ app.\*.map.json
 
 /widgetbook/
 /lib/main.dart
+
+/android/app/.cxx/**

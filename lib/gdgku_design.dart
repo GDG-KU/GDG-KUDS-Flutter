@@ -1,5 +1,6 @@
 library gdgku_design;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -11,6 +12,7 @@ part 'src/component/gdg_input.dart';
 part 'src/component/gdg_select.dart';
 part 'src/component/gdg_select_item.dart';
 part 'src/component/gdg_tag.dart';
+part 'src/component/gdg_textarea.dart';
 
 // Foundation views
 part 'src/foundation/gdg_color_scheme_view.dart';
