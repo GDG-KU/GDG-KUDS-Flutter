@@ -12,6 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  shadcn_flutter: ^0.0.28
 
 dev_dependencies:
   flutter_test:

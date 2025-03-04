@@ -13,6 +13,7 @@ part 'src/component/gdg_select.dart';
 part 'src/component/gdg_select_item.dart';
 part 'src/component/gdg_tag.dart';
 part 'src/component/gdg_textarea.dart';
+part 'src/component/gdg_pagination.dart';
 
 // Foundation views
 part 'src/foundation/gdg_color_scheme_view.dart';
