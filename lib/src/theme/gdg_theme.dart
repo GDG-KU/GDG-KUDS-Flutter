@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:gdgku_design/ui/theme/data.dart';
+part of '../../gdgku_design.dart';
 
 class GdgTheme extends StatelessWidget {
   const GdgTheme({

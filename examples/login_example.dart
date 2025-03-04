@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gdgku_design/ui/component/gdg_button.dart';
-import 'package:gdgku_design/ui/component/gdg_input.dart';
-import 'package:gdgku_design/ui/theme/gdg_theme.dart';
+import 'package:gdgku_design/gdgku_design.dart';
 
-class GdgExample extends StatelessWidget {
-  const GdgExample({super.key});
+class LoginExample extends StatelessWidget {
+  const LoginExample({super.key});
 
   @override
   Widget build(BuildContext context) {

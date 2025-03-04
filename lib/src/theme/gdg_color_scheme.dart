@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../../gdgku_design.dart';
 
 @immutable
 class GdgColorScheme {
