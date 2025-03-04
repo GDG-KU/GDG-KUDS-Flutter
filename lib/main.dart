@@ -15,6 +15,7 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   bool isInitialized = false;
   bool isChecked = false;
+  int currentPage = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +29,16 @@ class _MainAppState extends State<MainApp> {
       home: Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-          child: GdgSelect<String>(
-            value: "asdf",
-            options: const ["asdf", "fdsa"],
-            onChanged: (v) {},
+          child: GdgPagination(
+            currentPage: currentPage,
+            totalPages: 10,
+            maxVisiblePages: 5,
+            color: GdgColors.blue,
+            onPageChanged: (page) {
+              setState(() {
+                currentPage = page;
+              });
+            },
           ),
         ),
       ),
