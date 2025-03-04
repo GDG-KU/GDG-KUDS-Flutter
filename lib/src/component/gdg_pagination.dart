@@ -9,6 +9,7 @@ class GdgPagination extends StatefulWidget {
     this.maxVisiblePages = 7,
     this.showSkipToFirstPage = true,
     this.showSkipToLastPage = true,
+    this.color = GdgColors.primary,
   });
 
   final int currentPage;
@@ -17,6 +18,7 @@ class GdgPagination extends StatefulWidget {
   final bool showSkipToFirstPage;
   final bool showSkipToLastPage;
   final void Function(int page) onPageChanged;
+  final GdgColor color;
 
   bool get hasPrevious => currentPage > 1;
   bool get hasNext => currentPage < totalPages;
@@ -99,7 +101,11 @@ class _GdgPaginationState extends State<GdgPagination> {
         onTap: () => widget.onPageChanged(page),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
-          child: _GdgPaginationItem(isSelected: isSelected, pageNumber: page),
+          child: _GdgPaginationItem(
+            isSelected: isSelected,
+            pageNumber: page,
+            color: widget.color,
+          ),
         ),
       );
     } else if (start > 1) {
@@ -175,16 +181,21 @@ class _GdgPaginationState extends State<GdgPagination> {
 class _GdgPaginationItem extends StatelessWidget {
   final bool isSelected;
   final int pageNumber;
+  final GdgColor color;
 
   const _GdgPaginationItem({
     required this.isSelected,
     required this.pageNumber,
+    required this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    final effectiveBoxColor =
-        isSelected ? GdgColors.primary[700] : Colors.transparent;
+    final effectiveBoxColor = isSelected
+        ? color == GdgColors.primary
+            ? GdgColors.primary[700]
+            : color[500]
+        : Colors.transparent;
     final effectiveTextColor =
         isSelected ? GdgColors.primary[100] : GdgColors.primary[800];
 
