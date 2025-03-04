@@ -22,13 +22,10 @@ Widget buildNewWidgetUseCase(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(17.0),
     child: Center(
-      child: SizedBox(
-        width: 300,
-        child: _GdgPagination(
-          maxPages,
-          visiblePages,
-          color,
-        ),
+      child: _GdgPagination(
+        maxPages,
+        visiblePages,
+        color,
       ),
     ),
   );
@@ -62,9 +59,10 @@ class _GdgPaginationState extends State<_GdgPagination> {
           currentPage = page;
         });
       },
-      maxVisiblePages: 7,
+      maxVisiblePages: widget.maxVisiblePages,
       showSkipToFirstPage: true,
       showSkipToLastPage: true,
+      color: widget.color,
     );
   }
 }

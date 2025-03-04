@@ -94,28 +94,17 @@ class _GdgPaginationState extends State<GdgPagination> {
   Widget _createPageItem(int page) {
     bool isSelected = widget.currentPage == page;
 
-    if (page == 1 ||
-        page == widget.totalPages ||
-        page >= start && page <= end) {
-      return GestureDetector(
-        onTap: () => widget.onPageChanged(page),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-          child: _GdgPaginationItem(
-            isSelected: isSelected,
-            pageNumber: page,
-            color: widget.color,
-          ),
+    return GestureDetector(
+      onTap: () => widget.onPageChanged(page),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+        child: _GdgPaginationItem(
+          isSelected: isSelected,
+          pageNumber: page,
+          color: widget.color,
         ),
-      );
-    } else if (start > 1) {
-      return GestureDetector(
-        onTap: () => widget.onPageChanged(start - 1),
-        child: const SizedBox(width: 20),
-      );
-    }
-
-    return Container();
+      ),
+    );
   }
 
   @override
