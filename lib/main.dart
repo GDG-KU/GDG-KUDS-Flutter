@@ -25,16 +25,7 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: GdgSelect<String>(
-            value: "asdf",
-            options: const ["asdf", "fdsa"],
-            onChanged: (v) {},
-          ),
-        ),
-      ),
+      home: const Scaffold(backgroundColor: Colors.white),
     );
   }
 }

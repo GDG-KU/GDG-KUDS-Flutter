@@ -9,6 +9,7 @@ part 'src/component/gdg_badge.dart';
 part 'src/component/gdg_button.dart';
 part 'src/component/gdg_checkbox.dart';
 part 'src/component/gdg_input.dart';
+part 'src/component/gdg_modal.dart';
 part 'src/component/gdg_select.dart';
 part 'src/component/gdg_select_item.dart';
 part 'src/component/gdg_tag.dart';
