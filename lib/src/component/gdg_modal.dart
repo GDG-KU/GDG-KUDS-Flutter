@@ -1,24 +1,6 @@
 part of '../../gdgku_design.dart';
 
-/// Allows to insert a separator between the items of the iterable.
-extension SeparatedIterable on Iterable<Widget> {
-  /// Allows to insert a [separator] between the items of the iterable.
-  List<Widget> separatedBy(Widget separator) {
-    final result = <Widget>[];
-    final iterator = this.iterator;
-    if (iterator.moveNext()) {
-      result.add(iterator.current);
-      while (iterator.moveNext()) {
-        result
-          ..add(separator)
-          ..add(iterator.current);
-      }
-    }
-    return result;
-  }
-}
-
-extension FixedHeightWidget on Widget {
+extension _FixedHeightWidget on Widget {
   Widget withHeight(double height) {
     return SizedBox(
       height: height,
@@ -54,7 +36,7 @@ Future<T?> showGdgModal<T>({
 enum GdgModalVariant {
   custom,
   primary,
-  secondary,
+  wideButton,
   smallIcon,
   largeIcon,
 }
@@ -67,6 +49,10 @@ class GdgModal extends StatelessWidget {
     this.icon,
     this.child,
     this.actions = const [],
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.actionsMainAxisAlignment,
+    this.actionsMainAxisSize,
   }) : variant = GdgModalVariant.custom;
 
   const GdgModal.primary({
@@ -74,33 +60,49 @@ class GdgModal extends StatelessWidget {
     this.title,
     this.description,
     this.actions = const [],
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.actionsMainAxisAlignment,
+    this.actionsMainAxisSize,
   })  : icon = null,
         child = null,
         variant = GdgModalVariant.primary;
 
-  const GdgModal.secondary({
+  const GdgModal.wideButton({
     super.key,
     this.title,
     this.description,
     this.actions = const [],
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.actionsMainAxisAlignment,
+    this.actionsMainAxisSize,
   })  : icon = null,
         child = null,
-        variant = GdgModalVariant.secondary;
+        variant = GdgModalVariant.wideButton;
 
   const GdgModal.smallIcon({
     super.key,
     this.title,
     this.description,
-    this.icon,
+    required this.icon,
     this.actions = const [],
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.actionsMainAxisAlignment,
+    this.actionsMainAxisSize,
   })  : child = null,
         variant = GdgModalVariant.smallIcon;
 
   const GdgModal.largeIcon({
     super.key,
     this.title,
-    this.icon,
+    required this.icon,
     this.actions = const [],
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.actionsMainAxisAlignment,
+    this.actionsMainAxisSize,
   })  : description = null,
         child = null,
         variant = GdgModalVariant.largeIcon;
@@ -110,6 +112,10 @@ class GdgModal extends StatelessWidget {
   final Widget? icon;
   final Widget? child;
   final List<Widget> actions;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
+  final MainAxisAlignment? actionsMainAxisAlignment;
+  final MainAxisSize? actionsMainAxisSize;
 
   final GdgModalVariant variant;
 
@@ -134,6 +140,13 @@ class GdgModal extends StatelessWidget {
       color: Colors.grey.shade700,
     );
 
+    final placeholderHeight = child == null &&
+            description == null &&
+            [GdgModalVariant.primary, GdgModalVariant.wideButton]
+                .contains(variant)
+        ? 8.0
+        : 0.0;
+
     final children = [
       if (icon != null) icon!.withHeight(iconHeight),
       if (title != null)
@@ -146,18 +159,24 @@ class GdgModal extends StatelessWidget {
           style: descriptionStyle,
           child: description!.withHeight(descriptionHeight),
         ),
-      if (child != null) child!.withHeight(childHeight)
+      if (child != null) child!.withHeight(childHeight),
+      SizedBox(height: placeholderHeight)
     ];
 
     final actionsAxis =
-        (variant == GdgModalVariant.secondary || actions.length == 1)
+        (variant == GdgModalVariant.wideButton || actions.length == 1)
             ? Axis.vertical
             : Axis.horizontal;
 
     return GdgRawModal(
+      mainAxisAlignment: mainAxisAlignment,
+      crossAxisAlignment: crossAxisAlignment,
+      // ignore: sort_child_properties_last
+      children: children,
       actions: actions,
       actionsAxis: actionsAxis,
-      children: children,
+      actionsMainAxisAlignment: actionsMainAxisAlignment,
+      actionsMainAxisSize: actionsMainAxisSize,
     );
   }
 }
@@ -201,7 +220,7 @@ class GdgRawModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final effectiveConstraints =
-        constraints ?? const BoxConstraints(maxWidth: 320, maxHeight: 240);
+        constraints ?? const BoxConstraints(maxWidth: 320, maxHeight: 260);
 
     final effectiveBackgroundColor = backgroundColor ?? Colors.white;
     final effectiveBorder = border ?? Border.all(color: Colors.transparent);
