@@ -39,7 +39,7 @@ Widget buildNewWidgetUseCase(BuildContext context) {
   final button2 = GdgButton(
     onPressed: () => showGdgModal(
       context: context,
-      builder: (context) => GdgModal.secondary(
+      builder: (context) => GdgModal.wideButton(
         title: Text(titleText),
         description: Text(
           descriptionText,
@@ -66,6 +66,7 @@ Widget buildNewWidgetUseCase(BuildContext context) {
       context: context,
       builder: (context) => GdgModal.smallIcon(
         title: Text(titleText),
+        icon: const Icon(Icons.flutter_dash),
         description: Text(
           descriptionText,
           textAlign: TextAlign.center,
