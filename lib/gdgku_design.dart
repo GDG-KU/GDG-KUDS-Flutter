@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:gdgku_design/src/util/seperated_widget_extension.dart';
+
 // Components
 part 'src/component/gdg_badge.dart';
 part 'src/component/gdg_button.dart';
