@@ -59,7 +59,6 @@ class _GdgPaginationState extends State<GdgPagination> {
       }
 
       if (needFrontEllipsis) {
-        // items.add(_createPageItem(1));
         items.add(_createEllipsis());
       }
       for (int i = start; i <= end; i++) {
@@ -67,7 +66,6 @@ class _GdgPaginationState extends State<GdgPagination> {
       }
       if (needEndEllipsis) {
         items.add(_createEllipsis());
-        // items.add(_createPageItem(widget.totalPages));
       }
     }
 
