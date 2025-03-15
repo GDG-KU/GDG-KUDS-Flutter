@@ -141,7 +141,7 @@ class _GdgInputState extends State<GdgInput> {
         },
         color: hasFocus.value
             ? GdgColors.primary[800]
-            : GdgColors.primary.withOpacity(0.4),
+            : GdgColors.primary.withValues(alpha: 0.4),
         fontFamily: "Pretendard");
   }
 
@@ -162,7 +162,7 @@ class _GdgInputState extends State<GdgInput> {
         _ => 11.0,
       },
       color: switch (widget.state) {
-        GdgInputState.normal => GdgColors.primary.withOpacity(0.7),
+        GdgInputState.normal => GdgColors.primary.withValues(alpha: 0.7),
         GdgInputState.error => GdgColors.red,
         GdgInputState.success => GdgColors.green,
       },
