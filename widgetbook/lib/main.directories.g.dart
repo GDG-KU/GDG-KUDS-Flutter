@@ -14,9 +14,16 @@ import 'package:widgetbook_workspace/component/gdg_badge.dart' as _i2;
 import 'package:widgetbook_workspace/component/gdg_button.dart' as _i3;
 import 'package:widgetbook_workspace/component/gdg_checkbox.dart' as _i4;
 import 'package:widgetbook_workspace/component/gdg_input.dart' as _i6;
+import 'package:widgetbook_workspace/component/gdg_modal.dart' as _i7;
+import 'package:widgetbook_workspace/component/gdg_notification.dart' as _i8;
+import 'package:widgetbook_workspace/component/gdg_pagination.dart' as _i9;
+import 'package:widgetbook_workspace/component/gdg_select.dart' as _i10;
+import 'package:widgetbook_workspace/component/gdg_tag.dart' as _i11;
+import 'package:widgetbook_workspace/component/gdg_textarea.dart' as _i12;
+import 'package:widgetbook_workspace/example/gdg_example.dart' as _i14;
 import 'package:widgetbook_workspace/foundation/gdg_color_scheme_view.dart'
     as _i5;
-import 'package:widgetbook_workspace/foundation/gdg_typography.dart' as _i12;
+import 'package:widgetbook_workspace/foundation/gdg_typography.dart' as _i13;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookLeafComponent(
@@ -55,7 +62,7 @@ final directories = <_i1.WidgetbookNode>[
     ),
   ),
   _i1.WidgetbookLeafComponent(
-    name: 'GdgPagination',
+    name: 'GdgModal',
     useCase: _i1.WidgetbookUseCase(
       name: 'Default',
       builder: _i7.buildNewWidgetUseCase,
@@ -69,31 +76,38 @@ final directories = <_i1.WidgetbookNode>[
     ),
   ),
   _i1.WidgetbookLeafComponent(
-    name: 'GdgSelect',
+    name: 'GdgPagination',
     useCase: _i1.WidgetbookUseCase(
       name: 'Default',
       builder: _i9.buildNewWidgetUseCase,
     ),
   ),
   _i1.WidgetbookLeafComponent(
-    name: 'GdgTag',
+    name: 'GdgSelect',
     useCase: _i1.WidgetbookUseCase(
       name: 'Default',
       builder: _i10.buildNewWidgetUseCase,
     ),
   ),
   _i1.WidgetbookLeafComponent(
-    name: 'GdgTextarea',
+    name: 'GdgTag',
     useCase: _i1.WidgetbookUseCase(
       name: 'Default',
       builder: _i11.buildNewWidgetUseCase,
     ),
   ),
   _i1.WidgetbookLeafComponent(
+    name: 'GdgTextarea',
+    useCase: _i1.WidgetbookUseCase(
+      name: 'Default',
+      builder: _i12.buildNewWidgetUseCase,
+    ),
+  ),
+  _i1.WidgetbookLeafComponent(
     name: 'GdgTypographyView',
     useCase: _i1.WidgetbookUseCase(
       name: 'Default',
-      builder: _i12.buildGdgTypographyUseCase,
+      builder: _i13.buildGdgTypographyUseCase,
     ),
   ),
   _i1.WidgetbookFolder(
@@ -103,7 +117,7 @@ final directories = <_i1.WidgetbookNode>[
         name: 'Widget',
         useCase: _i1.WidgetbookUseCase(
           name: 'Default',
-          builder: _i13.buildNewWidgetUseCase,
+          builder: _i14.buildNewWidgetUseCase,
         ),
       )
     ],
