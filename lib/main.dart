@@ -15,6 +15,7 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   bool isInitialized = false;
   bool isChecked = false;
+  int currentPage = 1;
 
   @override
   Widget build(BuildContext context) {
