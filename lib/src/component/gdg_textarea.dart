@@ -138,8 +138,8 @@ class _GdgTextareaState extends State<GdgTextarea> {
   TextStyle textStyle(BuildContext context, bool focused) {
     return GdgTheme.of(context).textTheme.body2Medium.copyWith(
           color: focused
-              ? Colors.black.withOpacity(0.75)
-              : Colors.black.withOpacity(0.4),
+              ? Colors.black.withValues(alpha: 0.75)
+              : Colors.black.withValues(alpha: 0.4),
           textBaseline: TextBaseline.alphabetic,
         );
   }
@@ -161,10 +161,8 @@ class _GdgTextareaState extends State<GdgTextarea> {
                     padding: const EdgeInsets.only(bottom: 14.0),
                     child: Text(
                       widget.label!,
-                      style: GdgTheme.of(context)
-                          .textTheme
-                          .label1
-                          .copyWith(color: Colors.black.withOpacity(0.85)),
+                      style: GdgTheme.of(context).textTheme.label1.copyWith(
+                          color: Colors.black.withValues(alpha: 0.85)),
                     ),
                   ),
                 Container(

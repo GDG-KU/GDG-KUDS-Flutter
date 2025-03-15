@@ -1,5 +1,7 @@
 library gdgku_design;
 
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -16,6 +18,7 @@ part 'src/component/gdg_select.dart';
 part 'src/component/gdg_select_item.dart';
 part 'src/component/gdg_tag.dart';
 part 'src/component/gdg_textarea.dart';
+part 'src/component/gdg_notification.dart';
 part 'src/component/gdg_pagination.dart';
 
 // Foundation views

@@ -89,7 +89,7 @@ class _GdgSelectState<T> extends State<GdgSelect<T>> {
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.25),
+                    color: Colors.black.withValues(alpha: 0.25),
                     blurRadius: 5,
                     offset: const Offset(0, 2),
                   ),
