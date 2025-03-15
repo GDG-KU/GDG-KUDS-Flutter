@@ -26,22 +26,7 @@ class _MainAppState extends State<MainApp> {
           child: child!,
         );
       },
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: GdgPagination(
-            currentPage: currentPage,
-            totalPages: 10,
-            maxVisiblePages: 5,
-            color: GdgColors.blue,
-            onPageChanged: (page) {
-              setState(() {
-                currentPage = page;
-              });
-            },
-          ),
-        ),
-      ),
+      home: const Scaffold(backgroundColor: Colors.white),
     );
   }
 }

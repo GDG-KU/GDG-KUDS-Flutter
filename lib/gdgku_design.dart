@@ -4,11 +4,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:gdgku_design/src/util/seperated_widget_extension.dart';
+
 // Components
 part 'src/component/gdg_badge.dart';
 part 'src/component/gdg_button.dart';
 part 'src/component/gdg_checkbox.dart';
 part 'src/component/gdg_input.dart';
+part 'src/component/gdg_modal.dart';
 part 'src/component/gdg_select.dart';
 part 'src/component/gdg_select_item.dart';
 part 'src/component/gdg_tag.dart';
