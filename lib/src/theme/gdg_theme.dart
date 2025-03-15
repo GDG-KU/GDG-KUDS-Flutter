@@ -22,7 +22,18 @@ class GdgTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GdgInheritedTheme(theme: this, child: child);
+    return GdgInheritedTheme(
+      theme: this,
+      child: Overlay(
+        initialEntries: [
+          OverlayEntry(
+            builder: (context) {
+              return child;
+            },
+          )
+        ],
+      ),
+    );
   }
 }
 
