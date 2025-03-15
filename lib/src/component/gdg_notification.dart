@@ -219,7 +219,6 @@ class GdgNotification extends StatelessWidget {
 
     return Container(
       margin: margin,
-      width: double.maxFinite,
       constraints: const BoxConstraints(
         minHeight: 82,
       ),
@@ -252,27 +251,29 @@ class GdgNotification extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 14),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: effectiveTitleColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: effectiveTitleColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 8.6),
-                DefaultTextStyle(
-                  style: TextStyle(
-                    color: effectiveSubTextColor,
-                    fontWeight: FontWeight.w500,
+                  const SizedBox(height: 8.6),
+                  DefaultTextStyle(
+                    style: TextStyle(
+                      color: effectiveSubTextColor,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    child: content,
                   ),
-                  child: content,
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
