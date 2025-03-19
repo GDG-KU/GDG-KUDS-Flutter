@@ -55,7 +55,7 @@ class GdgColorSchemeView extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              "0x${(color[0] as Color).toARGB32().toRadixString(16)}",
+              "0x${(color[0] as Color).toString()}",
               style: textTheme.body2Medium.copyWith(
                 color: foregroundColor,
               ),
