@@ -228,7 +228,7 @@ class GdgNotification extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.15),
+            color: Colors.black.withOpacity(0.15),
             blurRadius: 17,
             offset: const Offset(0, 0),
           ),

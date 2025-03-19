@@ -100,7 +100,7 @@ Widget buildNewWidgetUseCase(BuildContext context) {
               width: 90,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.amberAccent.withValues(alpha: 0.7),
+                color: Colors.amberAccent.withOpacity(0.7),
               ),
             ),
             const DefaultTextStyle(
